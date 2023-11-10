@@ -14,7 +14,7 @@ const userSchema= new Schema({
         require:true
     },
     email :{
-        type: email,
+        type: String,
         require:true
     },
     department:{

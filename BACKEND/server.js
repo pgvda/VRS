@@ -25,12 +25,13 @@ connection.once('open',()=>{
     console.log("Mongodb Connection success")
 })
 
-const userRouter = require("./routes/users.js");
-const goodsRouter=require("./routes/goods.js");
+const requestRouter = require("./routes/Requests.js");
+const userRouter=require("./routes/Users.js");
+const vehicleRouter=require("./routes/Vehicles.js");
 
+app.use("/request",requestRouter);
 app.use("/user",userRouter);
-app.use("/item",goodsRouter);
-app.use("/images",express.static("public/image"))
+app.use("/vehicle",vehicleRouter);
 
 app.listen(PORT1,()=>{
     console.log('server is up and running no port '+PORT1);
