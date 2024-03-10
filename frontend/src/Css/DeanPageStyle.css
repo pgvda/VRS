@@ -1,0 +1,86 @@
+
+  /* Create three equal columns that floats next to each other */
+  .column1 {
+    float: left;
+    width: 25% ;
+    padding: 10px;
+  /* Should be removed. Only for demonstration */
+    background-color:#7900d922;
+  }
+
+  .requestbutton{
+    width:300%;
+    padding-left: 20px;
+    padding-top: 100px;
+  }
+  
+  .column2 {
+      float: left;
+      width: 60% ;
+      padding: 10px;
+       /* Should be removed. Only for demonstration */
+      font-size:larger;
+      font-weight: 700;
+      align-items: center;
+      
+    }
+  
+  .Addresevation{
+    width: 15%;
+      font-weight: 700;
+      border: none;
+      background-color: #fff;
+      justify-items: center;
+      align-items: center;
+  }
+  
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .row .chekbox {
+      margin-left: 20px;
+  
+  }
+  
+  .row .checkboxcls{
+      display: flex;
+      
+  }
+  
+  .proceeedbutton{
+    background-color:#8F00FF ;
+    padding: 7px;
+    width: 150px;
+    color: white;
+    border-radius: 10px;
+    border: 0cap;
+    margin-left: 30px;
+  }
+  .column3 {
+    float: left;
+    width: 10% ;
+    padding-top: 10px;
+    
+  
+  }
+  .formdeen{
+    height: 700px;
+  }
+  .checkgroup{
+    padding: 30px;
+  }
+  .deenrequwst{
+    background-color:#8F00FF ;
+    padding: 7px;
+    width: 150px;
+    color: white;
+    border-radius: 10px;
+    border: 0cap;
+    margin-left: 10px;
+    margin: 5px;
+  }

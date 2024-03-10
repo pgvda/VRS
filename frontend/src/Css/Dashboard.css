@@ -1,0 +1,84 @@
+.Dashboard{
+  padding-top: 100px;
+  list-style: none;
+}
+
+.vehicleBtn{
+    margin-top: 10%;
+    border-radius: 15px;
+  }
+.detailSection{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+  }
+.allVehicleDetails{
+    width: 50%;
+    height: auto;
+    background-color:transparent;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+  }
+  .buttondash{
+    border: 0cap;
+    background-color: transparent;
+    width: 100%;
+    height: 70px;
+    
+
+  }
+  .rowbutton{
+    height:70px
+  }
+  .columnbuttonleft{
+    float: left;
+    width:25%;
+    background-color: rgb(255, 255, 255);
+    
+  }
+  .vehiclebutton{
+    height: 60px;
+    padding-top: 7px;
+  }
+  .vehidetails{
+    background-color: white;
+    padding: 10px;
+    width: 90%;
+    border-radius: 10px;
+    margin: 10px;
+    border-style: solid;
+
+  }
+  .vehilink{
+    color: rgb(106, 106, 106);
+  }
+  .vehilink:hover{
+    
+    
+    transition: 0.5s;
+    
+      
+    
+}
+.sidetails:hover{
+  background-color: #cc912422;
+  transition: 0.5s;
+  color: black;
+}
+.sidetails{
+  background-color: white;
+  padding: 10px;
+  width: 90%;
+  border-radius: 10px;
+  margin-top: 10px;
+  border-style: solid;
+}
+.columnbuttonright{
+  font-size: 15px;
+  text-align: left;
+  padding-left: 120px;
+  color: black;
+  
+}
+

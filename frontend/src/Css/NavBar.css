@@ -1,0 +1,40 @@
+.color{
+    background-color:#750B1E ;
+    height: 100px;
+    justify-content: center;
+    -webkit-box-shadow: inset -1px -10px 5px -30px #000000;
+  box-shadow: inset -1px -10px 5px -11px #000000;
+    
+}
+.content{
+    padding: 0 150px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 10px;
+    
+}
+.color2{
+    padding-top: 80px;
+    font-size: 50px;
+    margin-left: -100px;
+    
+    
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+    
+    margin-top: 100px;
+   min-width: 120px;
+    min-height: 150px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../Images/logo4.png);
+    
+}
+
+.navbar-container{
+
+    -webkit-box-shadow: inset -1px -10px 5px -30px #000000;
+  box-shadow: inset -1px -10px 5px -11px #000000;
+  
+  }

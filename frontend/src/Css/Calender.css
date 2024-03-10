@@ -1,0 +1,20 @@
+.calendar-wrapper {
+    border-radius: 20%; /* You can adjust the value as needed */
+    overflow: hidden;
+    background-color: aquamarine; /* Ensure the border-radius is applied correctly */
+}
+.reserved-date {
+    background-color: #ffa07a; /* Set your desired background color for reserved dates */
+    color: white; /* Set the text color for reserved dates */
+    border-radius: 20%;
+  }
+  .message-box {
+    position: absolute;
+    top: 50px; /* Adjust the top position as needed */
+    left: 50px; /* Adjust the left position as needed */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 2; /* Ensure the message box is above the calendar */
+  }
