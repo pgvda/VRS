@@ -1,0 +1,63 @@
+.historydetails {
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; 
+  
+}
+
+.historydetails:hover {
+  background-color: #ffffff; 
+  color: rgb(245, 21, 21);
+  box-shadow: 0 5px 15px rgba(95, 22, 22, 0.1); 
+  transform: translateY(-5px);
+}
+.request-row {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.request-details {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.detail {
+  margin-bottom: 10px;
+}
+
+.label {
+  font-weight: bold;
+  color: #f6f0f0;
+}
+
+.expanded-request {
+  margin-top: 10px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+}
+
+.historyBtn {
+  border-radius: 5px;
+  background-color:rgb(205, 163, 170);
+  transition: background-color 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; 
+}
+
+.historyBtn:hover {
+  background-color:  #f9f9f9; 
+  color: rgb(0, 0, 0);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1); 
+  transform: translateY(-4px);
+}
+
+.historyList {
+  max-height: 300px;
+  overflow-y:auto;
+}

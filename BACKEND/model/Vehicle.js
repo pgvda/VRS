@@ -9,7 +9,7 @@ const vehicleSchema= new Schema({
 
     },
 
-    vehileType :{
+    vehicleType :{
         type: String,
         require:true
     },
@@ -19,7 +19,9 @@ const vehicleSchema= new Schema({
     },
     avilableSheat:{
         type: Number,
-        require : true
+        default: function () {
+            return this.sheatCapacity; // Set default value to sheatCapacity
+        }
 
     },
     driverName:{
@@ -34,23 +36,23 @@ const vehicleSchema= new Schema({
     status:{
 
         type:String,
-        require:true,
+        default: "yes",
         
     },
     availability:{
 
         
         type:String,
-        require:true,
+        default: "yes",
         
     },
     driverEmail:{
         type:String,
         require:true,
     },
-    vehicle:{
+    vehicleName:{
         type:String,
-        require:true,
+        required:true,
     }
 
 })

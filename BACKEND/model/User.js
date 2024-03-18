@@ -12,10 +12,12 @@ const userSchema= new Schema({
     lastName :{
         type: String,
         require:true
+        
     },
     email :{
         type: String,
         require:true
+        
     },
     department:{
         type: String,

@@ -33,7 +33,7 @@ Vehicle Reservations</h1>
           {/* Slide 2 */}
           <div className={`slide ${currentSlide === 2 ? 'active' : ''}`}>
             <div className='columnsign1'>
-              <img className="img-logsign" src={require('../Images/logo4.png')} alt="Logo" />
+              <img className="img-logsign" src={require('../Images/green.png')} alt="Logo" />
             </div>
             <div className='columnsign2'>
               <h1 className='titlepop'>Slide 2</h1>

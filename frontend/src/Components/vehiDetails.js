@@ -1,101 +1,84 @@
-import React, {useState, useEffect} from "react";
-import "../Css/VehiDetails.css"
-import Calendar from "react-calendar";
+import React, { useState, useEffect } from "react";
+import "../Css/PopupDash.css";
 import CalendarGfg from "./Calander";
 
-export default function VehiDetails(){
+export default function VehiDetails({ vehicle, onClose }) {
+  if (!vehicle) {
+    return null;
+  }
 
-    const[Vehicle,setVehicle]=useState([]);
-    useEffect(()=>{
-        fetch("http://localhost:8080/vehicles")
-        .then((response)=>response.json())
-        .then((data)=>setVehicle(data))
+  useEffect(() => {
 
+      const handleClickOutside = (event) => {
+        const popupInner = document.getElementById("popup-inner1");
+  if (popupInner && !popupInner.contains(event.target)) {
+    // Clicked outside of the popup, close it
+    onClose();
+  }
 
-    })
+  
+};
+  
+      // Add event listener to the document body
+      document.body.addEventListener("click", handleClickOutside);
+  
+      // Remove event listener when component unmounts
+      return () => {
+        document.body.removeEventListener("click", handleClickOutside);
+      };
+  },[onClose]);
 
-
-
-
-
-    return(
-        <div className="vehicleDteails">
-            <section className="detailSection">
-
-                <div class="container text-center">
-                    <div class="row align-items-center">
-                        <div class="col" >
-                            <div className="vehicleAvilability">
-                                <label>Available
-                                    <input className="availableCheckBox1" type="checkbox"></input>
-                                    <input className="availableCheckBox2" type="checkbox"></input>
-                                </label>
-                            </div>
-                                
-                            
-                            <div className="vehicleImage">
-                                <label className="showVehicleImage"> vehicleImage </label>
-                            </div>
-                            
-                            
-                        </div>
-                        <div className="col">
-                            <div className="vehicleDetailsShow">
-                                <label>
-                                    Vehicle No :
-                                </label>
-
-                            </div>
-                            
-                            <div>
-                                <label className="vehicleDetailsShow">
-                                    Driver :
-                                    
-                                </label>       
-                            </div>
-
-                            <div>
-                                <label className="vehicleDetailsShow">
-                                    Sheat Capacity :
-                                </label>
-                            </div>
-
-                            <div>
-                                <label className="vehicleDetailsShow"> 
-                                    Fuel Consumption :
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div className="vehicleDetailsShow"> 
-                                <label className="">PX XXXX</label>
-                            </div>
-                            <div className="vehicleDetailsShow">
-                                <label className="">Pathme</label>
-                            </div>
-
-                            <div className="vehicleDetailsShow">
-                                <label className="">15</label>
-                            </div>
-
-                            <div className="vehicleDetailsShow">
-                                <label className="">15km/L</label>
-                            </div>
-                        </div>   
-                    </div>        
-                </div>    
-            </section>
-            <p>Some text..</p>
-            <section>
-                <CalendarGfg/>
-            </section>
-            
-
+  return (
+    <div>
+      <div className="popup1">
+      <button className="close-button" onClick={onClose}>
+                Close
+              </button>
+        <div className="rowpop">
+          <div className="columnpop">
+            <div className="popup-inner1">
+              <div>
+                {vehicle.vehicleImg === "" || vehicle.vehicleImg === null ? (
+                  ""
+                ) : (
+                  <img
+                    className="vehiclebutton"
+                    src={`data:image/png;base64,${vehicle.vehicleImg}`}
+                    alt="Vehicle"
+                  />
+                )}
+              </div>
+            </div>
+          </div>
+          <div className="columnpop">
+            <div className="popup-inner1">
+              <h2>Vehicle Details</h2>
+              {vehicle && (
+                <div>
+                    <p>Vehicle No: {vehicle.vehicleNo}</p>
+                  <p>Vehicle Type: {vehicle.vehicleType}</p>
+                  <p>Model: {vehicle.vehicleName}</p>
+                  <p>Driver: {vehicle.driverName}</p>
+                  <p>Sheets Capacity: {vehicle.sheatCapacity}</p>
+                </div>
+              )}
+              
+            </div>
+          </div>
         </div>
+        <div className="rowpop2">
+        <div className="columnpop">
+          <div className="popup-inner2">
+            <section>
+              <CalendarGfg vehicle={vehicle}/>
+            </section>
+          </div>
+        </div>
+      </div>
+      </div>
 
-        
+      {/* New row for the calendar */}
 
-    )
-
-
+    </div>
+  );
 }

@@ -4,7 +4,6 @@ import io from 'socket.io-client';
 import axios from 'axios';
 import "../Css/LocationTracker.css";
 const center = { lat: 20.9271, lng: 79.8612 };
-const socket = io('http://localhost:3000'); // WebSocket connection
 
 function LocationTracker() {
   const { isLoaded } = useJsApiLoader({
@@ -41,7 +40,7 @@ function LocationTracker() {
   return isLoaded ? (
     <div className="map">
     <GoogleMap 
-      center={center}
+      center={currentPosition }
       zoom={8}
       mapContainerStyle={{ width: "60%", height: "60vh" }}
       options={{

@@ -14,7 +14,7 @@ const requestSchema= new Schema({
     
 
     date : {
-        type:Date,
+        type:String,
         require:true
 
     },
@@ -75,6 +75,7 @@ const requestSchema= new Schema({
         type: String,
         default: "notStart"
 
+        
     },
    
     applier :{

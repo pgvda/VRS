@@ -89,3 +89,6 @@
     border-radius: 10px;
     border: 0cap;
   }
+  .input-group-text{
+    border:#000000;
+  }

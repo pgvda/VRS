@@ -15,55 +15,53 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '1000mb' })); // Adjust t
 
 
 
+
 router.route("/addVehicle").post(async(req,res)=>{
     let vehicleNo=req.body.vehicleNo;
     let vehicleType=req.body.vehicleType;
     let sheatCapacity=req.body.sheatCapacity;
-    let avilableSheat=req.body.avilableSheat;
+    
     let driverName=req.body.driverName;
-    let status=req.body.status;
-    let availability=req.body.availability;
+    
+   
     let {vehicleImg} =req.body;
     let driverEmail=req.body.driverEmail;
-    let vehicle=req.body.vehicle;
+    let vehicleName=req.body.vehicleName;
     
     try{
       Vehicle.create({         
         vehicleNo,
         vehicleNo,
         vehicleType,
-        sheatCapacity,
-        avilableSheat,
+        sheatCapacity, 
+        avilableSheat: sheatCapacity,       
         driverName,
-        status,
-        availability,
+        status:"yes",
+        availability: 'yes',
         vehicleImg,
         driverEmail,
-        vehicle
+        vehicleName
       })
 
         await vehicleCollection.doc(vehicleNo).set({
           vehicleNo,
           vehicleType,
-          sheatCapacity,
-          avilableSheat,
-          driverName,
-          status,
-          availability,
-         
-        driverEmail,
-        vehicle
-          
-          
+          sheatCapacity,         
+          driverName,       
+          driverEmail,
+          vehicleName,
+          status:"yes",
+        availability: 'yes',
+        avilableSheat: sheatCapacity, 
           
         }); 
 
-      res.send({status:"ok"})  
-      
+       
     }catch(error){
       console.error(error.message)
     }
     
+
 
     
 })
