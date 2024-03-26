@@ -30,16 +30,18 @@
   } 
   .rowbutton{
     height:90px;
+    transition: background-color 0.3s ease;
    
   }
+  
   .columnbuttonleft{
     float: left;
     display: flex;
     justify-content: center;
     align-items: center;
-    width:26%;
+    width:20%;
     border-radius: 7px;
-    height: 90px;
+    height: 80px;
     border-width: 2px;
     border-style:solid;
 
@@ -62,23 +64,21 @@
   .vehilink{
     color: rgb(106, 106, 106);
     text-decoration: none;
+
   }
-  .vehilink:hover{
-    
-    
-    transition: 0.5s;
-    
-      
-    
-}
+  
  .sidetails:hover{
   background-color: #cc912422;
   transition: 0.5s;
   color: black;
+  box-shadow: 0 5px 15px rgba(95, 22, 22, 0.1); 
+  transform: translateY(-5px);
+ 
 } 
 .sidetails{
   background-color: white;
-  
+  transition: background-color 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; 
   width: 90%;
   border-radius: 10px;
   border-width: 2px;
@@ -95,7 +95,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 13vh;
+  height: 12vh;
 font-weight: bold;
   
 }

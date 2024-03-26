@@ -4,7 +4,10 @@ const mongoose = require('mongoose');
 const multer=require('multer');
 let Request =require("../model/Request");
 const {requestCollection}=require('../config')
+const admin = require('firebase-admin');
 
+
+  
 router.post("/addrequest", async (req, res) => {
     try {
         const {
@@ -86,7 +89,20 @@ router.post("/addrequest", async (req, res) => {
 
         // Save request to Firebase Realtime Database
         
+const message = {
+            data: {
+                title: 'New Reservation',
+                body: 'A new reservation has been added.',
+                // You can add more custom data to be sent with the notification
+            },
+            topic: 'drivers', // The topic to which drivers are subscribed
+        };
 
+        // Send the message to the devices subscribed to the provided topic
+        const response = await admin.messaging().send(message);
+
+        // Handle response if needed
+        console.log('FCM notification sent:', response);
         
     } catch (err) {
         console.error("Error occurred: ", err);

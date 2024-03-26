@@ -503,7 +503,10 @@ body {
   display: none;
 }
 .map{
-  margin: 100px;
+  margin: 50px;
   border-radius: 20px;
 
+}
+.columnmap2{
+  padding-top: 100px;
 }

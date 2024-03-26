@@ -20,6 +20,9 @@ router.get('/getAvailableSeats', async (req, res) => {
 
         console.log("Parameters validation successful.");
 
+    
+    
+
         const selectedDate = new Date(date);
 
         console.log("Date string converted to JavaScript Date object:", selectedDate);

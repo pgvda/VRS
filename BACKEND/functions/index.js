@@ -19,28 +19,29 @@
 // });
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
+
 admin.initializeApp();
 
-exports.sendNotificationOnRequestCreation = functions.firestore
+exports.sendNotificationToDriver = functions.firestore
     .document('requests/{requestId}')
     .onCreate((snap, context) => {
         const requestData = snap.data();
 
+        // Extract relevant data from the request document
+        const { driverId, reason, destination } = requestData;
+
+        // Retrieve driver's FCM token from Firestore or any other data source
+        const driverFCMToken = '...'; // Retrieve the driver's FCM token
+
+        // Construct the notification payload
         const payload = {
             notification: {
-                title: 'New Request Added',
-                body: `Details: ${requestData.detail}`, // Customize your message with request details
-                icon: 'default_icon',
-                click_action: 'OPEN_ACTIVITY_1'
+                title: 'New Request',
+                body: `New request: ${reason} to ${destination}`
             }
         };
 
-        return admin.messaging().sendToTopic('requests', payload)
-            .then(response => {
-                console.log('Notification sent successfully:', response);
-                return null; // Resolve the promise
-            })
-            .catch(error => {
-                console.log('Notification sent failed:', error);
-            });
+        // Send the notification to the driver
+        return admin.messaging().sendToDevice(driverFCMToken, payload);
     });
+

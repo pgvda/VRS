@@ -17,6 +17,14 @@ export default function RequestForm() {
         const { email } = parsedUserInfo; // Extract name from user data
         setUserEmail(email);
     }
+
+    axios.get('http://localhost:8080/vehicle/vehicles')
+            .then(response => {
+                setVehicleList(response.data); // Assuming response.data is an array of vehicle names
+            })
+            .catch(error => {
+                console.error("Error fetching vehicle list:", error);
+            });
 }, []); // Run only once after component mount
 
 useEffect(() => {
@@ -24,7 +32,7 @@ useEffect(() => {
     console.log('User Data:', userEmail);
 }, [userEmail]); // Run whenever userData changes
 
-
+const [vehicleList, setVehicleList] = useState([]);
 
     const [date, setdate]=useState("");
     const [startTime, setstartTime]=useState("");
@@ -128,14 +136,14 @@ useEffect(() => {
                 }}/>
 
                 <label for="vehicleSelect" class="vehicle">Select Vehicle :</label>
-                <select id="vehicleSelect" class="vehicleInput" onChange={(a)=>{
+                <select id="vehicleSelect" className="vehicleInput" onChange={(a) => {
                     setvehicle(a.target.value);
                 }}>
                     <option>Select</option>
-                    <option>Vehicle 1 </option>
-                    <option>Vehicle 2</option>
-                    <option>Vehicle 3</option>
-                    <option>Vehicle 4</option>
+                    {/* Mapping over the vehicleList state to populate dropdown options */}
+                    {vehicleList.map((vehicle, index) => (
+                        <option key={index}>{vehicle.vehicleName}</option>
+                    ))}
                 </select>
             </div>
 

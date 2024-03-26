@@ -7,14 +7,14 @@
 
 .historydetails:hover {
   background-color: #ffffff; 
-  color: rgb(245, 21, 21);
+  color: #750B1E;
   box-shadow: 0 5px 15px rgba(95, 22, 22, 0.1); 
   transform: translateY(-5px);
 }
 .request-row {
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
   background-color: #f9f9f9;
   margin-bottom: 20px;
   transition: background-color 0.3s ease;
@@ -37,14 +37,18 @@
 
 .expanded-request {
   margin-top: 10px;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 10px;
-  background-color: #f2f2f2;
+  background-image: url("../Images/ticket3.png");
+  min-height: 300px;
+  background-color: #750B1E;
+
 }
 
 .historyBtn {
   border-radius: 5px;
+ margin-left: 5px;
   background-color:rgb(205, 163, 170);
   transition: background-color 0.3s ease;
   transition: box-shadow 0.3s ease, transform 0.3s ease; 
@@ -58,6 +62,31 @@
 }
 
 .historyList {
-  max-height: 300px;
+  max-height: 400px;
   overflow-y:auto;
 }
+.columnticket1{
+  padding-left: 50px;
+  float: left;
+  width: 40%;
+  
+}
+.columnticket2{
+ 
+ padding-left: 150px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+ 
+}
+.table-borderless tbody tr td div {
+  text-align: left;
+  
+}
+.cost{
+  text-align: left;
+}
+.value{
+  text-align: right;
+}
+

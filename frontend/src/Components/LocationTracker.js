@@ -38,11 +38,14 @@ function LocationTracker() {
 
 
   return isLoaded ? (
-    <div className="map">
+    <div className="rowmap">
+      <div className="columnmap2"><h2>You Can See Your Vehicle Location</h2></div>
+      <div className="columnmap1">
+      <div className="map">
     <GoogleMap 
       center={currentPosition }
       zoom={8}
-      mapContainerStyle={{ width: "60%", height: "60vh" }}
+      mapContainerStyle={{  height: "60vh" }}
       options={{
         zoomControl: false,
         streetViewControl: false,
@@ -59,6 +62,11 @@ function LocationTracker() {
       )}
     </GoogleMap>
     </div>
+      </div>
+      
+
+    </div>
+    
   ) : (
     <></>
   );
