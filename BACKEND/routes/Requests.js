@@ -89,6 +89,7 @@ router.post("/addrequest", async (req, res) => {
 
         // Save request to Firebase Realtime Database
         
+        
 const message = {
             data: {
                 title: 'New Reservation',
@@ -118,6 +119,37 @@ router.route("/requests").get((req,res)=>{
         console.log(err)
     })
 })
+router.route("/viewRequest/:id").get((req,res)=>{
+
+    let requestId = req.params.id;
+
+    Request.findById(requestId).then((Request)=>{
+        res.json(Request)
+    }).catch((err)=>{
+        console.log(err)
+    })
+})
+router.put("/updateRequest1/:id", async (req, res) => {
+    try {
+        const requestId = req.params.id;
+        const requestData = req.body;
+
+        if (!Array.isArray(requestData.passengers) || requestData.passengers.length === 0) {
+            throw new Error('Passengers data is missing or invalid');
+        }
+
+        const updatedRequest = await Request.findByIdAndUpdate(requestId, requestData, { new: true });
+
+        if (!updatedRequest) {
+            return res.status(404).json({ message: "Request not found" });
+        }
+
+        res.json({ status: "ok", updatedRequest });
+    } catch (error) {
+        console.error("Error occurred: ", error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
 
 
 module.exports=router;

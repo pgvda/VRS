@@ -1,12 +1,13 @@
 .columLleft {
   width: 25%;
   float: left;
-  background-color: hsl(350, 63%, 88%);
+  background-color: #f4cdd4;
   
 }
 
 .columnRight {
   width: 75%;
+  
   
 }
 .signin{

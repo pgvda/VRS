@@ -4,19 +4,20 @@
     justify-content: center;
     -webkit-box-shadow: inset -1px -10px 5px -30px #000000;
   box-shadow: inset -1px -10px 5px -11px #000000;
-    
+  color:#FFC107
 }
 .content{
     padding: 0 150px;
     font-family: "Times New Roman", Times, serif;
     font-size: 10px;
+    color:#FFC107
     
 }
 .color2{
     padding-top: 80px;
     font-size: 50px;
     margin-left: -100px;
-    
+    color:#FFC107
     
 }
 .logo{
@@ -33,7 +34,7 @@
 }
 
 .navbar-container{
-
+    
     -webkit-box-shadow: inset -1px -10px 5px -30px #000000;
   box-shadow: inset -1px -10px 5px -11px #000000;
   }

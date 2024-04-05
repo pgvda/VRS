@@ -1,4 +1,3 @@
-
 import React, {useState, useEffect } from "react";
 import axios from "axios";
 import "../Css/RequestForm.css";
@@ -72,13 +71,9 @@ const [vehicleList, setVehicleList] = useState([]);
         
         try {
           if (comeBack === "") {
-            alert("Please select whether you want to come back in the same vehicle or not.");
+           alert("Please select whether you want to come back in the same vehicle or not.");
             return;
-          }
-          
-         
-    
-          
+          }         
            // Assuming user data contains the logger name
     
           const currentDate = new Date().toISOString().split('T')[0];
@@ -98,6 +93,7 @@ const [vehicleList, setVehicleList] = useState([]);
             passengers: passengerList,
             applier: userEmail, // Set applier to current logger's name
             applyDate: currentDate
+            
           };
           
           // Replace the URL with your actual endpoint
@@ -127,7 +123,7 @@ const [vehicleList, setVehicleList] = useState([]);
       };
   return (
     <form class="vehicleRequestForm" title="Vehicle Request Form" >
-    <label for="Vehicle Request Forme" class="form-label"  >Vehicle Request Form </label>
+    <label for="Vehicle Request Forme" class="form-label">Vehicle Request Form </label>
         
             <div class="RequestVehicle">
                 <label for="date" class="date">Date :</label>

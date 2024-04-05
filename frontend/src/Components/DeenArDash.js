@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import '../Css/ReservationDash.css'
 import axios from 'axios';
-export default function ReservationDash() {
+export default function DeenArDash() {
 
     const [requests, setRequest] = useState([]);
     const [forceUpdate, setForceUpdate] = useState(false);
@@ -12,7 +12,7 @@ export default function ReservationDash() {
       async function fetchReserDetail() {
         try {
           const response = await axios.get('http://localhost:8080/request/requests'); // Replace with the correct URL
-          const filteredRequests = response.data.filter(request => !request.approveHead);
+          const filteredRequests = response.data.filter(request => !request.approveDeenAr && request.approveHead);
           setRequest(filteredRequests);
     
         } catch (error) {

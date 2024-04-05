@@ -17,6 +17,7 @@ import ReservationDash from './Components/ReservationDash';
 import AddNewVehicle from './Components/AddNewVehicle';
 import HistryPage from './Components/HistryPage';
 import LocationTracker from './Components/LocationTracker'
+import SecurityPage from './Components/SecurityPage';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route path="/reser" element={<ReservationDash/>}/>
           <Route path='/addvehicle' element={<AddNewVehicle/>}/>
           <Route path='/location-tracker' element={<LocationTracker/>}/>
+          <Route path='/security' element={<SecurityPage/>}/>
         </Routes>
      
         <Footer/>
