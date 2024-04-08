@@ -43,12 +43,14 @@ const userRouter=require("./routes/Users.js");
 const vehicleRouter=require("./routes/Vehicles.js");
 const locationDetail = require("./routes/LocationTrackers.js")
 const costDtail = require("./routes/CostCalculations.js")
+const feedbackRouter = require("./routes/Feedbacks.js");
 
 app.use("/request",requestRouter);
 app.use("/user",userRouter);
 app.use("/vehicle",vehicleRouter);
 app.use("/location-details",locationDetail)
 app.use("/cost",costDtail)
+app.use("/user/feedback",feedbackRouter);
 
 app.listen(PORT1,()=>{
     console.log('server is up and running no port '+PORT1);

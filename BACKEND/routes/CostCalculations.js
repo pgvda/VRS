@@ -26,7 +26,7 @@ router.get('/vehicle-cost/calculation',async(req,res) => {
           })
           .then(data => {
             const responseData =data;
-            
+            console.log(data)
             return responseData
           })
           .catch(error => {

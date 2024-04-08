@@ -18,11 +18,27 @@ export default function Signin() {
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
+  const validateEmail = (email) => {
+    // Regular expression for email validation
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
+
   
 
   const sendData = async (e) => {
     console.log(email,password);
     e.preventDefault();
+
+    if (!email || !password) {
+      alert("Email and password are required");
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      alert("Please enter a valid email address");
+      return;
+    }
 
     try{
       const config={

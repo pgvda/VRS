@@ -2,6 +2,7 @@ const router=require("express").Router();
 const express=require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
 
 const User = require("../model/User");
 
@@ -52,6 +53,16 @@ router.post('/signup',async(req,res)=>{
 
 })
 // User login
+
+
+const transporter = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+    user: 'dilshanariyarathna1999@gmail.com',
+    pass: 'trwr oqgt hzbf lojm' 
+  }
+});
+
 router.route("/login").post((req,res)=>{
     const email = req.body.email; 
     const password = req.body.password;
@@ -86,24 +97,28 @@ router.route("/login").post((req,res)=>{
                         });
                         
                     }else{
+                      sendUnauthorizedLoginEmail(email);
                         res.json({
                             status : "FAILED" , 
                             message: "Invalied password"
                         });
                     }
                 }).catch(()=>{
+                  sendUnauthorizedLoginEmail(email);
                     res.json({
                         status : "FAILED" , 
                         message: "An error occurred while comparing"
                     });
                 })
             }else{
+              sendUnauthorizedLoginEmail(email);
                 res.json({
                     status : "FAILED" , 
                     message: "invalied email"
                 });
             }
         }).catch(()=>{
+          sendUnauthorizedLoginEmail(email);
             res.json({
                 status : "FAILED" , 
                 message: "An error occurred while checking for existing user"
@@ -114,6 +129,25 @@ router.route("/login").post((req,res)=>{
     }
   
   })
+
+
+  const sendUnauthorizedLoginEmail = async (email) => {
+    const mailOptions = {
+      from: 'dilshanariyarathna1999@gmail.com',
+      to: email,
+      subject: 'Unauthorized Login Attempt',
+      text: 'There was an unauthorized login attempt using your email address. Please ensure your account security.'
+    };
+  
+    try {
+      await transporter.sendMail(mailOptions);
+      console.log('Unauthorized login email notification sent successfully.');
+    } catch (error) {
+      console.error('Error sending unauthorized login email notification:', error);
+    }
+  };
+  
+
 
 // all user data read
 router.get('/users', async (req, res) => {
