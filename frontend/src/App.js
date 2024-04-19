@@ -18,7 +18,9 @@ import AddNewVehicle from './Components/AddNewVehicle';
 import HistryPage from './Components/HistryPage';
 import LocationTracker from './Components/LocationTracker'
 import SecurityPage from './Components/SecurityPage';
-
+import UserList from './Components/UserDetails/UserList';
+import AddUserForm from './Components/UserDetails/AddUserForm';
+import VehicleList from './Components/VehicleAdd/VehicleList';
 
 function App() {
   
@@ -38,9 +40,11 @@ function App() {
           <Route path="/request" element={<RequestForm/>}/>
           <Route path="/vehidetail" element={<VehiDetailPage/>}/>
           <Route path="/reser" element={<ReservationDash/>}/>
-          <Route path='/addvehicle' element={<AddNewVehicle/>}/>
+          <Route path='/vehiclelist' element={<VehicleList/>}/>
           <Route path='/location-tracker' element={<LocationTracker/>}/>
           <Route path='/security' element={<SecurityPage/>}/>
+          <Route path='/userlist' element={<UserList/>}/>
+          <Route path='/addUser' element={<AddUserForm/>}/>
         </Routes>
      
         <Footer/>

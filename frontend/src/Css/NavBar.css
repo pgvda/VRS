@@ -6,6 +6,37 @@
   box-shadow: inset -1px -10px 5px -11px #000000;
   color:#FFC107
 }
+@media (max-width: 1650px) {
+      
+    .columnRight {
+      justify-content: center;
+      align-items: center;
+      width:20%;
+      min-width: 500px;
+      
+    }
+    .column61{
+      display: none;
+    }
+    .row61 {
+      padding-top: 50px;
+      width:1200px;
+      
+      margin-left: auto;
+margin-right: auto;
+
+    }
+    .column62 {
+      width: 50%; /* Adjust to 100% for small screens */
+      border-radius: 20px; /* Adjust border-radius for small screens */
+      margin-left: 110px; /* Remove left margin for small screens */
+      margin-right: 110px; /* Remove right margin for small screens */
+      padding: 5px; /* Adjust padding for small screens */
+      height: auto;
+      padding: 30px; /* Allow height to be determined by content */
+    }
+    
+  }
 .content{
     padding: 0 150px;
     font-family: "Times New Roman", Times, serif;
@@ -37,4 +68,12 @@
     
     -webkit-box-shadow: inset -1px -10px 5px -30px #000000;
   box-shadow: inset -1px -10px 5px -11px #000000;
+  }
+  .line{
+    height: 5px;
+    background-color: #ffb507;
+  }
+  .line2{
+    height: 5px;
+    background-color: #750B1E;
   }

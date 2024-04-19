@@ -19,7 +19,7 @@ export default function RequestPage(){//////////////////////////////////
         <div className='min-vh-100'>
         <div class="row">
           
-          <div class="columLleft">
+          <div class="columleft">
 
       <Dashboard/>
   </div>

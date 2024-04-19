@@ -36,7 +36,9 @@ function Navbar() {
       </ul>
     </div>
   </div>
-</nav>
+</nav><div className='line'>
+</div>
+
     </div>
   )
 }

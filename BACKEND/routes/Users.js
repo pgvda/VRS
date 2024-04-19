@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const User = require("../model/User");
 
 
+
 // user signup 
 
 router.post('/signup',async(req,res)=>{
@@ -127,7 +128,7 @@ router.get('/users', async (req, res) => {
   });
 
   // delete user using id
-  router.delete('/users/:id', async (req, res) => {
+  router.delete('/usersdelete/:id', async (req, res) => {
     try {
       const userId = req.params.id;
       const user = await User.findByIdAndDelete(userId);

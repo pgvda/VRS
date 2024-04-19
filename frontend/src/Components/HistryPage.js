@@ -76,12 +76,12 @@ export default function HistryPage() {
 
       <div class="row ">
 
-        <div class="columLleft">
+        <div class="columleft">
 
           <Dashboard />
         </div>
         
-        <div class="column2" >
+        <div class="columnHistory" >
         <h1>History</h1>
           <div className="historyList min-vh-100">
           {requests.map(request => (

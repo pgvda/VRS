@@ -25,9 +25,9 @@ const PopUp = ({ onClose }) => {
             </div>
             <div className='columnsign2'>
                 
-              <h1 className='titlepop'>Welcome to Faculty of Engineering
+              <h1 className='titlepop'>Welcome to Faculty of Engineering<br/>
 Vehicle Reservations</h1>
-<p>Welcome to the web page of the Faculty of Engineering, University of Ruhuna.  We are located in the beautiful coastal city of Galle in the southern province of Sri Lanka.</p>
+<p> Software aims to streamline vehicle reservations, reduce unnecessary expenses, and enhance overall efficiency within the faculty</p>
             </div>
           </div>
           {/* Slide 2 */}

@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '1000mb' })); // Adjust t
 
 
 
+
 router.route("/addVehicle").post(async(req,res)=>{
     let vehicleNo=req.body.vehicleNo;
     let vehicleType=req.body.vehicleType;
@@ -78,7 +79,7 @@ router.get('/vehicles', async (req, res) => {
   });
 
   //delete vehicle by id
-  router.delete('/vehicles/:id', async (req, res) => {
+  router.delete('/vehiclesdelete/:id', async (req, res) => {
     try {
       const vehicleId = req.params.id;
       const vehicle = await Vehicle.findByIdAndDelete(vehicleId);
@@ -93,6 +94,7 @@ router.get('/vehicles', async (req, res) => {
       res.status(500).json({ message: 'Internal Server Error' });
     }
   });
+  
   
   //update vehicle by id
   router.put('/updateVeh/:id', async (req, res) => {

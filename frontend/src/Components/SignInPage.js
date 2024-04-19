@@ -69,12 +69,12 @@ console.log(parsedUserInfo);
     <div className='min-vh-100'>
       
       <div class="row"> 
-        <div class="columLleft">
+        <div  class="columleft">
           <SignInDash/>
 
         </div>
         
-        <div class="columnRight min-vh-100">
+        <div  class="columnRight min-vh-100">
           <div>
             <div className='signin'>
               <div className="row61">

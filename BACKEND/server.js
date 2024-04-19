@@ -11,6 +11,7 @@ const websocket = require('./webShocket.js');
 
 
 
+
 const server = http.createServer(app);
 
 
@@ -48,13 +49,13 @@ const userRouter=require("./routes/Users.js");
 const vehicleRouter=require("./routes/Vehicles.js");
 const locationDetail = require("./routes/LocationTrackers.js")
 const availableSeats = require("./routes/availableSheats.js")
-const pdfRoute = require("./routes/pdf.js")
+
 app.use("/availableSeats",availableSeats)
 app.use("/request",requestRouter);
 app.use("/user",userRouter);
 app.use("/vehicle",vehicleRouter);
 app.use("/location-details",locationDetail)
-app.use('/pdf', pdfRoute);
+
 
 
 app.listen(PORT1,()=>{

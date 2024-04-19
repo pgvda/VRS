@@ -10,6 +10,7 @@ const {driversCollection}=require('../config')
   
  
 
+
 router.post('/location', async (req, res) => {
   try {
     const { currentLocation, currentVelocity, latitude, longitude } = req.body; // Destructure fields from the request body
