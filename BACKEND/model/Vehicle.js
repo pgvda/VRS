@@ -18,7 +18,11 @@ const vehicleSchema= new Schema({
         require:true
     },
     avilableSheat:{
+<<<<<<< HEAD
         type: Number,
+=======
+        type: String,
+>>>>>>> origin/main
         require : true
 
     },
@@ -28,6 +32,7 @@ const vehicleSchema= new Schema({
     },
     vehicleImg:{
 
+<<<<<<< HEAD
         type:String,
         
     },
@@ -51,10 +56,19 @@ const vehicleSchema= new Schema({
     vehicle:{
         type:String,
         require:true,
+=======
+        data:Buffer,
+        contentType: String
+        
+>>>>>>> origin/main
     }
 
 })
 
+<<<<<<< HEAD
 const Vehicle=mongoose.model('Vehicle',vehicleSchema);
+=======
+const Vehicle=mongoose.model("Vehicle",vehicleSchema);
+>>>>>>> origin/main
 
 module.exports=Vehicle;

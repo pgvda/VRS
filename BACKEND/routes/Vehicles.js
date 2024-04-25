@@ -1,4 +1,5 @@
 const router=require("express").Router();
+<<<<<<< HEAD
 const express=require('express');
 const bodyParser = require('body-parser');
 
@@ -30,11 +31,27 @@ router.route("/addVehicle").post(async(req,res)=>{
     try{
       Vehicle.create({         
         vehicleNo,
+=======
+const express=require('express')
+const multer=require('multer');
+
+router.route("/addVehicle").post((req,res)=>{
+    let vehicleNo=req.body.vehicleNo;
+    let vehicleType=req.body.vehicleNo;
+    let sheatCapacity=req.body.sheatCapacity;
+    let avilableSheat=req.body.avilableSheat;
+    let driverName=req.body.driverName;
+    let vehicleImg=req.body.vehicleImg;
+
+
+    const newVehicle=new Vehicle({
+>>>>>>> origin/main
         vehicleNo,
         vehicleType,
         sheatCapacity,
         avilableSheat,
         driverName,
+<<<<<<< HEAD
         status,
         availability,
         vehicleImg,
@@ -115,4 +132,16 @@ router.get('/vehicles', async (req, res) => {
     }
   });
 //all functions are working
+=======
+        vehicleImg
+    })
+
+    newVehicle.save().then(()=>{
+        res.json("new vehicle added")
+    }).catch((err)=>{
+        console.log("error occore in",err);
+    })
+})
+
+>>>>>>> origin/main
 module.exports=router;

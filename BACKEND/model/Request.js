@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+<<<<<<< HEAD
 const passengerSchema = new mongoose.Schema({
     name: String,
     position: String,
@@ -14,10 +15,16 @@ const requestSchema= new Schema({
 
     date : {
         type:Date,
+=======
+const requestSchema= new Schema({
+    vehicleType : {
+        type:String,
+>>>>>>> origin/main
         require:true
 
     },
 
+<<<<<<< HEAD
     startTime :{
         type: String,
         require:true
@@ -84,10 +91,26 @@ const requestSchema= new Schema({
         require:true
     },
     passengers: [passengerSchema]
+=======
+    startPoint :{
+        type: String,
+        require:true
+    },
+    endPoint :{
+        type: Number,
+        require:true
+    },
+    mileage:{
+        type: Number,
+        require : true
+
+    }
+>>>>>>> origin/main
 
 
 })
 
+<<<<<<< HEAD
 
 
 
@@ -97,3 +120,8 @@ const requestSchema= new Schema({
   module.exports = Request;
 
 
+=======
+const Request=mongoose.model("Request",requestSchema);
+
+module.exports=Request;
+>>>>>>> origin/main
