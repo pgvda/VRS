@@ -1,13 +1,12 @@
 .Dashboard{
   padding-top: 100px;
-  list-style: none;
-  
+  list-style: none;  
 }
 
  .vehicleBtn{
-    
     border-radius: 15px;
   } 
+
  .detailSection{
     display: flex;
     flex-direction: row;
@@ -50,8 +49,13 @@
     
   }
    .vehiclebutton{
-    height: 50px;
     
+    width: 100%;
+    margin: 0;
+  
+ 
+  
+  
   } 
     .vehidetails{
     background-color: white;

@@ -8,26 +8,23 @@ export default function VehiDetails({ vehicle, onClose }) {
   }
 
   useEffect(() => {
-
-      const handleClickOutside = (event) => {
-        const popupInner = document.getElementById("popup-inner1");
-  if (popupInner && !popupInner.contains(event.target)) {
-    // Clicked outside of the popup, close it
-    onClose();
-  }
-
+    const handleClickOutside = (event) => {
+      const popupInner = document.getElementById("popup1");
+      if (popupInner && !popupInner.contains(event.target)) {
+        // Clicked outside of the popup, close the entire page
+        window.close();
+      }
+    };
   
-};
+    // Add event listener to the document body
+    document.body.addEventListener("click", handleClickOutside);
   
-      // Add event listener to the document body
-      document.body.addEventListener("click", handleClickOutside);
+    // Remove event listener when component unmounts
+    return () => {
+      document.body.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
   
-      // Remove event listener when component unmounts
-      return () => {
-        document.body.removeEventListener("click", handleClickOutside);
-      };
-  },[onClose]);
-
   return (
     <div>
       <div className="popup1">

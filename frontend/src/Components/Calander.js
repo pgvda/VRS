@@ -34,11 +34,14 @@ export default function CalendarGfg({ vehicle }) {
 
   const fetchReservations = async (vehicleName) => {
     try {
+      if (!vehicle || !vehicle.vehicleName) {
+        return; // Exit early if no vehicle is selected
+      }
       
       const month = (value.getMonth() + 1).toString().padStart(2, '0'); // Add padding if needed
       const selectedDate = `${value.getFullYear()}-${month}-${value.getDate()}`;
-      console.log('Request URL:', `http://localhost:8080/availableSeats/getAvailableSeats?date=${selectedDate}&vehicle=${vehicleName}`);
-    console.log('Request Parameters:', { date: selectedDate, vehicle: vehicleName });
+      console.log('Request URL:', `http://localhost:8080/request/requests`);
+      console.log('Request Parameters:', { date: selectedDate, vehicle: vehicleName });
       console.log('Selected Date:', selectedDate);
       console.log('Vehicle Name:', vehicleName);
       const response = await axios.get(`http://localhost:8080/request/requests`, {
@@ -47,20 +50,21 @@ export default function CalendarGfg({ vehicle }) {
           date: selectedDate
         }
       });
-      const filteredReservations = response.data;
+      const filteredReservations = response.data.filter(reservation => reservation.vehicle === vehicleName);
       setReservations(filteredReservations);
-      console.log('Fetched reservations for vehicle:', vehicleName);
-
+  
+      console.log('Fetched reservations for vehicle:', filteredReservations);
+  
       const availableSeatsResponse = await axios.get(`http://localhost:8080/availableSeats/getAvailableSeats`, {
         params: {
           date: selectedDate,
-          vehicle: vehicle.vehicleName
+          vehicle: vehicleName
         }
       });
       setAvailableSeats(availableSeatsResponse.data.availableSeats);
     } catch (error) {
       console.error('Error fetching reservations:', error);
-  console.log('Error response:', error.response); 
+      console.log('Error response:', error.response); 
     }
   };
 

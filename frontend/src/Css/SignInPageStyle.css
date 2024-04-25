@@ -11,16 +11,14 @@
   
 }
 
-  
 .row61{
       padding-top: 100px;  
       border-radius: 20px;
       margin-left: auto;
   margin-right: auto;
-      width: 820px;
-      
+      width: 820px;    
       overflow: hidden;
-     
+    
   }
   .column61 {
       float: left;
@@ -28,9 +26,7 @@
       padding: 10px;
       height: 470px; 
       background-color: #8b8b8b5f;
-      border-radius: 20px 0px 0px 20px;
-     
-      
+      border-radius: 20px 0px 0px 20px;     
     }
     .column62 {
       float: left;
