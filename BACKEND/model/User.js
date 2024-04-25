@@ -32,7 +32,11 @@ const userSchema= new Schema({
         
         
     },
+<<<<<<< HEAD
+    designation :{
+=======
     position:{
+>>>>>>> origin/main
         type: String,
         require : true
     },
