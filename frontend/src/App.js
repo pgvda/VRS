@@ -19,6 +19,7 @@ import HistryPage from './Components/HistryPage';
 import LocationTracker from './Components/LocationTracker'
 import SecurityPage from './Components/SecurityPage';
 import UserList from './Components/UserDetails/UserList';
+import UserListAr from './Components/UserDetails/UserListAr';
 import AddUserForm from './Components/UserDetails/AddUserForm';
 import VehicleList from './Components/VehicleAdd/VehicleList';
 
@@ -45,6 +46,7 @@ function App() {
           <Route path='/security' element={<SecurityPage/>}/>
           <Route path='/userlist' element={<UserList/>}/>
           <Route path='/addUser' element={<AddUserForm/>}/>
+          <Route path='/userlistar' element={<UserListAr/>}/>
         </Routes>
      
         <Footer/>

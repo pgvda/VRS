@@ -54,7 +54,7 @@ router.route("/addVehicle").post(async(req,res)=>{
           status:"yes",
         availability: 'yes',
         avilableSheat: sheatCapacity, 
-          
+        vehicleImg,
         }); 
 
        

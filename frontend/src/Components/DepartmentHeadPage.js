@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../Css/DepartmentHeadPageStyle.css";
 import ReservationDash from "./ReservationDash";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 export default function Head() {
   
   
@@ -356,9 +357,18 @@ const submitHeadForm = async () => {
 
       </div>
       <div className="column3" style={{ backgroundColor: "#fff" }}>
-        <button className="deenrequwst">Add Reservation</button>
-        <button className="deenrequwst">Your History</button>
-        <button className="deenrequwst">Proceed</button>
+        <h2>DashBoard</h2>
+        <Link style={{ textDecoration: "none" }} to="/request">
+        <button className="deenrequwst  "  >
+        Add Reservation
+        </button>
+        </Link>
+        <Link to="/user">
+        <button className="deenrequwst">
+        Your History
+        </button>
+        </Link>
+        
       </div>
     </div>
   );

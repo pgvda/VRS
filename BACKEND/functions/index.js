@@ -44,4 +44,3 @@ exports.sendNotificationToDriver = functions.firestore
         // Send the notification to the driver
         return admin.messaging().sendToDevice(driverFCMToken, payload);
     });
-

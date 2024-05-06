@@ -1,18 +1,18 @@
-// AddUserForm.js
-import React, { useState } from 'react';
+// UpdateUserForm.js
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../../Css/UserDetails/AddUserForm.css'; // Import CSS file for styling
 
-const AddUserForm = ({ onClose }) => {
+const UpdateUserFormAr = ({ user, onClose }) => {
   const [formData, setFormData] = useState({
-    fristName: '',
-    lastName: '',
-    email: '',
-    department: '',
-    password: '',
-    repassword: '',
-    designation: '',
-    telNo: '',
+    fristName: user.fristName,
+    lastName: user.lastName,
+    email: user.email,
+    department: user.department,
+    password: user.password,
+    repassword: user.repassword,
+    designation: user.designation,
+    telNo: user.telNo,
   });
 
   const handleChange = e => {
@@ -22,10 +22,8 @@ const AddUserForm = ({ onClose }) => {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/user/signup', formData);
+      await axios.put(`http://localhost:8080/user/update/${user._id}`, formData);
       onClose();
-      
-      setUsers(response.data);
     } catch (err) {
       console.error(err);
     }
@@ -35,7 +33,7 @@ const AddUserForm = ({ onClose }) => {
     <div className="modal">
       <div className="modal-content">
         <span className="close" onClick={onClose}>&times;</span>
-        <h2>Add User</h2>
+        <h2>Update User</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>First Name:</label>
@@ -50,7 +48,7 @@ const AddUserForm = ({ onClose }) => {
             <input type="email" name="email" value={formData.email} onChange={handleChange} />
           </div>
           <div className="form-group">
-          <label>Department:</label>
+            <label>Department:</label>
             <select
               type="text"
               name="department"
@@ -64,7 +62,8 @@ const AddUserForm = ({ onClose }) => {
               <option value="Civil">Civil Department</option>
               <option value="Administration">Administration</option>
               {/* Add more options as needed */}
-            </select></div>
+            </select>
+          </div>
           <div className="form-group">
             <label>Password:</label>
             <input type="password" name="password" value={formData.password} onChange={handleChange} />
@@ -84,21 +83,19 @@ const AddUserForm = ({ onClose }) => {
             >
               <option value="">Select Designation</option>
               <option value="user">User</option>
-              <option value="head">Head</option>
-              <option value="ar">AR</option>
-              <option value="dean">Dean</option>
+              
               {/* Add more options as needed */}
             </select>
-            </div>
+          </div>
           <div className="form-group">
             <label>Telephone Number:</label>
             <input type="tel" name="telNo" value={formData.telNo} onChange={handleChange} />
           </div>
-          <button type="submit">Add User</button>
+          <button type="submit">Update User</button>
         </form>
       </div>
     </div>
   );
 };
 
-export default AddUserForm;
+export default UpdateUserFormAr;

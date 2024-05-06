@@ -43,6 +43,8 @@ export default function Signin() {
       navigate('/head'); // Redirect to the customer page
     }else if (data.designation=="ar"){
       navigate('/ar');
+    }else if (data.designation=="dean"){
+      navigate('/dean');
     }else{
       alert("wrong email or password")
     }

@@ -57,7 +57,6 @@ app.use("/vehicle",vehicleRouter);
 app.use("/location-details",locationDetail)
 
 
-
 app.listen(PORT1,()=>{
     console.log('server is up and running no port '+PORT1);
 

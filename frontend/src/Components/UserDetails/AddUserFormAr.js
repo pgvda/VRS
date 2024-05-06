@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../../Css/UserDetails/AddUserForm.css'; // Import CSS file for styling
 
-const AddUserForm = ({ onClose }) => {
+const AddUserFormAr = ({ onClose }) => {
   const [formData, setFormData] = useState({
     fristName: '',
     lastName: '',
@@ -84,9 +84,6 @@ const AddUserForm = ({ onClose }) => {
             >
               <option value="">Select Designation</option>
               <option value="user">User</option>
-              <option value="head">Head</option>
-              <option value="ar">AR</option>
-              <option value="dean">Dean</option>
               {/* Add more options as needed */}
             </select>
             </div>
@@ -101,4 +98,4 @@ const AddUserForm = ({ onClose }) => {
   );
 };
 
-export default AddUserForm;
+export default AddUserFormAr;

@@ -82,10 +82,10 @@ const UpdateUserForm = ({ user, onClose }) => {
               required
             >
               <option value="">Select Designation</option>
-              <option value="User">User</option>
-              <option value="Head">Head</option>
-              <option value="AR">AR</option>
-              <option value="Dean">Dean</option>
+              <option value="user">User</option>
+              <option value="head">Head</option>
+              <option value="ar">AR</option>
+              <option value="dean">Dean</option>
               {/* Add more options as needed */}
             </select>
           </div>

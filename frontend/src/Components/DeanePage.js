@@ -4,6 +4,8 @@ import "../Css/DeanPageStyle.css";
 import axios from "axios";
 import DeenArDash from "./DeenArDash";
 import PDFGenerator from "./PDFGenerator";
+import ReservationDashDean from "./ReservationDashDean";
+import { Link } from 'react-router-dom';
 export default function DeanePage() {
   
   
@@ -150,7 +152,7 @@ const submitArForm = async () => {
       <div className="column1 ">
         <div className="requestbutton">
           <div>
-            <DeenArDash />
+            <ReservationDashDean />
           </div>
         </div>
       </div>
@@ -372,9 +374,32 @@ const submitArForm = async () => {
 
       </div>
       <div className="column3" style={{ backgroundColor: "#fff" }}>
-        <button className="deenrequwst">Add Reservation</button>
-        <button className="deenrequwst">Your History</button>
-        <button className="deenrequwst">Proceed</button>
+      <h2>DashBoard</h2>
+        <Link style={{ textDecoration: "none" }} to="/request">
+        <button className="deenrequwst  "  >
+        Add Reservation
+        </button>
+        </Link>
+        <Link to="/user">
+        <button className="deenrequwst">
+        Your History
+        </button>
+        </Link>
+        <Link to="/vehiclelist">
+        <button className="deenrequwst">
+        Add Vehicle
+        </button>
+        </Link>
+        <Link to="/userlist">
+        <button className="deenrequwst">
+        Add User
+        </button>
+        </Link>
+        <Link to="http://localhost:3001/location-tracker">
+        <button className="deenrequwst">
+        Locations
+        </button>
+        </Link>
       </div>
       
     </div>
