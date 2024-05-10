@@ -1,0 +1,91 @@
+.columLleft {
+  width: 25%;
+  float: left;
+  background-color: hsl(350, 63%, 88%);
+  
+}
+
+.columnRight {
+  width: 75%;
+  
+}
+.signin{
+    margin-left: -150px;
+   }
+  
+.row61{
+      padding-top: 100px;  
+      border-radius: 20px;
+      margin-left: 300px;
+      margin-right: 400px;
+      width: 820px;
+      
+     
+  }
+  .column61 {
+      float: left;
+      width: 420px;
+      padding: 10px;
+      height: 470px; 
+      background-color: #8b8b8b5f;
+      border-radius: 20px 0px 0px 20px;
+     
+      
+    }
+    .column62 {
+      float: left;
+      width: 400px;
+      padding: 10px;
+      position: relative;
+      height: 470px; 
+      
+      border-radius: 0px 20px 20px 0px;
+      padding-right: 30px;
+      background-color: #8b8b8b5f;
+      
+    }
+  .img-log61{
+      height: 60px;
+      
+      
+      
+  }
+  .form61{
+  color: rgb(0, 0, 0); 
+  text-align: center;
+  padding-top: 65px;
+  position: relative;
+      
+  }
+  .form-label{
+      padding-right: 10px;
+  }
+  .img61{
+      position: relative;
+      height: 450px;
+      border-radius: 15px;
+      
+      border: #000000;
+      
+  
+  }
+  .text61{
+      color: #000000;
+      text-align: center;
+      padding-top: 170px;
+      position: absolute;
+      padding-left: 8%;
+      
+      
+  
+      
+  }
+
+  .btnSign{
+    background-color:#750B1E ;
+    padding: 7px;
+    width: 150px;
+    color: white;
+    border-radius: 10px;
+    border: 0cap;
+  }
