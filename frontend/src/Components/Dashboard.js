@@ -37,7 +37,7 @@ export default function Dashboard() {
             {vehicles.map(vehicle=>(
                 <li key={vehicle._id}>
                 <label
-                    className="form-label sidetails"
+                    className= {`form-label sidetails ${vehicle.availability === "no" ? 'blinking' : ''}`}
                     style={vehicle.availability === "yes" ? { backgroundColor: '#E8F5E9' } : { backgroundColor: '#FFEBEE' }}
                     onClick={() => handleLabelClick(vehicle)}>
                     <div className="rowbutton" >

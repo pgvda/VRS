@@ -16,47 +16,43 @@ import VehiDetailPage from './Components/VehicleDetailsPage';
 import ReservationDash from './Components/ReservationDash';
 import AddNewVehicle from './Components/AddNewVehicle';
 import HistryPage from './Components/HistryPage';
-import LocationTracker from './Components/LocationTracker'
+import LocationTracker from './Components/LocationTracker';
 import SecurityPage from './Components/SecurityPage';
 import UserList from './Components/UserDetails/UserList';
 import UserListAr from './Components/UserDetails/UserListAr';
 import AddUserForm from './Components/UserDetails/AddUserForm';
 import VehicleList from './Components/VehicleAdd/VehicleList';
+import CostPage from './Components/CostDetails/CostPage';
+import AddCostDetails from './Components/CostDetails/AddCostDetails';
+import CostList from './Components/CostDetails/CostList';
 
 function App() {
-  
   return (
     
-
-        
-<div className="App">
       <Router>
         <NavBar />
-        <Routes >
+        <Routes>
           <Route path="" exact Component={Signin}/>
-          <Route path="/user" element={<HistryPage/>}/>
-          <Route path="/dean" element={<Dean/>}/>
-          <Route path="/ar" element={<ArPage/>}/>
-          <Route path="/head" element={<Head/>}/>
-          <Route path="/request" element={<RequestForm/>}/>
-          <Route path="/vehidetail" element={<VehiDetailPage/>}/>
-          <Route path="/reser" element={<ReservationDash/>}/>
-          <Route path='/vehiclelist' element={<VehicleList/>}/>
-          <Route path='/location-tracker' element={<LocationTracker/>}/>
-          <Route path='/security' element={<SecurityPage/>}/>
-          <Route path='/userlist' element={<UserList/>}/>
-          <Route path='/addUser' element={<AddUserForm/>}/>
-          <Route path='/userlistar' element={<UserListAr/>}/>
+          <Route path="/user" element={<HistryPage />} />
+          <Route path="/dean" element={<Dean />} />
+          <Route path="/ar" element={<ArPage />} />
+          <Route path="/head" element={<Head />} />
+          <Route path="/request" element={<RequestForm />} />
+          <Route path="/vehidetail" element={<VehiDetailPage />} />
+          <Route path="/reser" element={<ReservationDash />} />
+          <Route path="/vehiclelist" element={<VehicleList />} />
+          <Route path="/location-tracker" element={<LocationTracker />} />
+          <Route path="/security" element={<SecurityPage />} />
+          <Route path="/userlist" element={<UserList />} />
+          <Route path="/addUser" element={<AddUserForm />} />
+          <Route path="/userlistar" element={<UserListAr />} />
+          <Route path="/costpage" element={<CostPage />} />
+          <Route path="/addcostpage" element={<AddCostDetails />} />
+          <Route path="/costlist" element={<CostList />} />
         </Routes>
-     
-        <Footer/>
+        <Footer />
       </Router>
-      
-    </div>
-        
-
     
-
   );
 }
 

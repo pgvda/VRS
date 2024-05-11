@@ -1,8 +1,8 @@
 /* RequestForm.css */
 
 .vehicleRequestForm {
-    max-width: 800px;
-    width: 50%;
+    max-width: 1000px;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;

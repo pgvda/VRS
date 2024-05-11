@@ -45,6 +45,7 @@ const [vehicleList, setVehicleList] = useState([]);
     const [position, setPosition] = useState("");
     const [depatureLocation, setdepatureLocation] = useState("");
     const [passengerName, setPassengerName] = useState("");
+    const [name, setname] = useState("");
     const [destination, setdestination] = useState("");
     const [pickup, setpickup] = useState("");
     const [drop, setdrop] = useState("");
@@ -52,7 +53,7 @@ const [vehicleList, setVehicleList] = useState([]);
     
     const addPassenger = () => {
         const newPassenger = {
-          passengerName: passengerName,
+          name: name,
           position: position,
           pickup: pickup,
           drop: drop
@@ -61,12 +62,18 @@ const [vehicleList, setVehicleList] = useState([]);
         setPassengerList([...passengerList, newPassenger]);
     
         // Clear input fields after adding a passenger
-        setPassengerName("");
+        setname("");
         setPosition("");
         setpickup("");
         setdrop("");
       };
 
+      const deletePassenger = (index) => {
+        const updatedPassengers = passengerList.filter(
+          (passenger, i) => i !== index
+        );
+        setPassengerList(updatedPassengers);
+      };
       const submitForm = async () => {
         
         try {
@@ -140,6 +147,7 @@ const [vehicleList, setVehicleList] = useState([]);
                     {vehicleList.map((vehicle, index) => (
                         <option key={index}>{vehicle.vehicleName}</option>
                     ))}
+                    <option>New Vehicle</option>
                 </select>
             </div>
 
@@ -161,10 +169,10 @@ const [vehicleList, setVehicleList] = useState([]);
                 }}>
                     <option>Select</option>
                     <option>Administrative</option>
-                    <option>Finance</option>
-                    <option>Technical Officer</option>
-                    <option>Acadamic Staff</option>
-                    <option>AR Office</option>
+                    <option>Machenical</option>
+                    <option>Electrical</option>
+                    <option>Civil</option>
+                    <option>Marine</option>
                 </select>
 
                 
@@ -199,32 +207,30 @@ const [vehicleList, setVehicleList] = useState([]);
         <div class="RequestVehicle">
             <label for="comeBack" class="comeBack">Do you want to come back in same vehicle</label>
             <input
-  class="set-comeback-input"
+  className="set-comeback-input"
   type="radio"
   name="setComeBack"
   id="setComeBack1"
-  value={true} // Set value to true when selected
-  onChange={(a) => {
-    setcomeBack(true);
-  }}
+  value={true}
+  onChange={() => setcomeBack(true)}
+  checked={comeBack === true}
 />
-<label class="set-comeback-label" for="setComeBack1">
+<label className="set-comeback-label" htmlFor="setComeBack1">
   Yes
 </label>
 <input
-  class="set-comeback-input"
+  className="set-comeback-input"
   type="radio"
   name="setComeBack"
   id="setComeBack2"
-  value={false} // Set value to false when selected
-  checked
-  onChange={(a) => {
-    setcomeBack(false);
-  }}
+  value={false}
+  onChange={() => setcomeBack(false)}
+  checked={comeBack === false}
 />
-<label class="set-comeback-label" for="setComeBack2">
+<label className="set-comeback-label" htmlFor="setComeBack2">
   No
 </label>
+
         </div> 
         
 
@@ -245,8 +251,8 @@ const [vehicleList, setVehicleList] = useState([]);
         <div class="RequestVehicle">
             <label for="passengerName" class="passengerName">Name :</label>
             <input type="text" class="passengerNameInput" id="passengerName" placeholder ="Enter Passenger Name"
-            value={passengerName}
-            onChange={(e) => setPassengerName(e.target.value)}/>
+            value={name}
+            onChange={(e) => setname(e.target.value)}/>
         </div>
 
         <div class="RequestVehicle">
@@ -262,14 +268,14 @@ const [vehicleList, setVehicleList] = useState([]);
 
         <div class="RequestVehicle">
             <label for="depatureLocation" class="depatureLocation">Pickup Location :</label>
-            <input type="text" class="pickupInput" id="pickupLocation" placeholder ="Enter Passenger Pickup Location"
+            <input type="text" class="passengerNameInput" id="passengerName" placeholder ="Enter Passenger Name"
            
             onChange={(e) => setpickup(e.target.value)}/>
         </div>
 
         <div class="RequestVehicle">
             <label for="destination" class="destination">Drop Location :</label>
-            <input type="text" class="dropInput" id="drop" placeholder ="Enter Passenger Drop Location"
+            <input type="text" class="passengerNameInput" id="passengerName" placeholder ="Enter Passenger Name"
             
             onChange={(e) => setdrop(e.target.value)}/>
         </div>
@@ -304,6 +310,14 @@ const [vehicleList, setVehicleList] = useState([]);
                 <td>{passenger.position}</td>
                 <td>{passenger.pickup}</td>
                 <td>{passenger.drop}</td>
+                <td>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => deletePassenger(index)}
+                  >
+                    Delete
+                  </button>
+                  </td>
               </tr>
             ))}
           </tbody>

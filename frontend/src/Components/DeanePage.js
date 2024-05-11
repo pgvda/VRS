@@ -340,7 +340,7 @@ const submitArForm = async () => {
                 onChange={handleApproveChange}
               />
               <label class="set-approve-label" for="setApprove1">
-                Approved
+              &ensp; Approved 
               </label>
               <input
                 class="set-approve-input"
@@ -352,7 +352,7 @@ const submitArForm = async () => {
                 onChange={handleApproveChange}
               />
               <label class="set-approve-label" for="setApprove2">
-                Rejected by Deen
+                 Rejected &ensp; by Deen
               </label>
               </div>
               

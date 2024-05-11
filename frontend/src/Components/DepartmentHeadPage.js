@@ -184,15 +184,8 @@ const submitHeadForm = async () => {
 
             <div class="RequestVehicle">
               <label for="sectiondSelect" class="section">Select Section :</label>
-              <select id="sectiondSelect" class="selectSectionInput" value={formData.section}
-              onChange={handleChange}>
-                <option>Select</option>
-                <option>Administrative</option>
-                <option>Finance</option>
-                <option>Technical Officer</option>
-                <option>Acadamic Staff</option>
-                <option>AR Office</option>
-              </select>
+              <input type="text" class="selectSectionInput" id="section"  placeholder="hh-mm" value={formData.section}
+              onChange={handleChange} />
             </div>
 
             <div class="RequestVehicle">
@@ -272,7 +265,7 @@ const submitHeadForm = async () => {
 
               <div class="RequestVehicle">
                 <label for="destination" class="destination">Drop Location :</label>
-                <input type="text" class="destinationInput" id="destination" placeholder="Enter Passenger Drop Location" name="drop"
+                <input type="text" class="passengerNameInput" id="destination" placeholder="Enter Passenger Drop Location" name="drop"
                   value={formData.drop}
                   onChange={handleChange} />
               </div>
@@ -314,7 +307,7 @@ const submitHeadForm = async () => {
               </table>
             </div>
             <div class="RequestVehicle">
-              <label for="approve" class="approve">The Request is </label>
+              <label for="approve" class="approve">The Request is &ensp; </label>
               <input
                 class="set-approve-input"
                 type="radio"
@@ -325,7 +318,7 @@ const submitHeadForm = async () => {
                 onChange={handleApproveChange}
               />
               <label class="set-approve-label" for="setApprove1">
-                Approved
+                Approved &ensp;
               </label>
               <input
                 class="set-approve-input"
@@ -337,7 +330,7 @@ const submitHeadForm = async () => {
                 onChange={handleApproveChange}
               />
               <label class="set-approve-label" for="setApprove2">
-                Rejected by Department Head
+                Rejected &ensp; by Department Head
               </label>
               <button type="submit" class="btn btn-primary submitf" onClick={submitHeadForm} >Proceed</button>
 

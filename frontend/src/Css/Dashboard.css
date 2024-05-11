@@ -111,3 +111,12 @@ font-weight: bold;
 }
 
 
+@keyframes blink {
+  0% { background-color: #c2c1c1; }
+  50% { background-color: #FFFFFF; }
+  100% { background-color: #c2c1c1; }
+}
+
+.blinking {
+  animation: blink 3s infinite;
+}

@@ -70,30 +70,29 @@ export default function ReservationDash() {
   }
   
   
-    return (
-        <div>
-            <div className="row">
-                <div className="col-4">
-                    <h1>Reservations</h1>
-                    <div className="list-group" id="list-tab" role="tablist">
-                        <ul className='requestdash'>
-                            {requests.map(request => (
-                                <li key={request._id}>
-                                    <a className="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings" onClick={() => handleItemClick(request)}>
-                                        <div className="d-flex w-100 justify-content-between">
-                                            <h5 className="mb-1">{request.applier}</h5>
-                                            <small className="text-body-secondary">{console.log('applyDate:', request.applyDate) || getFormattedDate(request.applyDate)}</small>
-
-                                        </div>
-                                        <p className="mb-1">{request.reason}</p>
-                                        <small className="text-body-secondary">To: {request.destination} | Date: {request.date}</small>
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+  return (
+    <div>
+        <div className="row">
+            <div className="col-4">
+                <h1>Reservations</h1>
+                <div className="list-group" id="list-tab" role="tablist">
+                    <ul className='requestdash'>
+                        {requests.map(request => (
+                            <li key={request._id} className={request.isNew ? 'list-item-new' : 'list-item'}>
+                                <a className="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings" onClick={() => handleItemClick(request)}>
+                                    <div className="d-flex w-100 justify-content-between">
+                                        <h5 className="mb-1">{request.applier}</h5>
+                                        <small className="text-body-secondary">{console.log('applyDate:', request.applyDate) || getFormattedDate(request.applyDate)}</small>
+                                    </div>
+                                    <p className="mb-1">{request.reason}</p>
+                                    <small className="text-body-secondary">To: {request.destination} | Date: {request.date}</small>
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </div>
-    );
+    </div>
+);
 }
