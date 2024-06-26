@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../../Css/UserDetails/AddUserForm.css'; // Import CSS file for styling
-
+//add user form
 const AddUserFormAr = ({ onClose }) => {
   const [formData, setFormData] = useState({
     fristName: '',
