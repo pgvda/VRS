@@ -25,7 +25,7 @@ const AddUserFormAr = ({ onClose }) => {
       await axios.post('http://localhost:8080/user/signup', formData);
       onClose();
       
-      setUsers(response.data);
+     
     } catch (err) {
       console.error(err);
     }
