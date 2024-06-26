@@ -100,19 +100,7 @@ export default function ArPage() {
       const response = await axios.put(`http://localhost:8080/request/updateRequest1/${formData._id}`, formDataWithId);
       console.log("Server Response:", response.data);
 
-  // Send FCM notification if approveDeenAr is true
-  if (formData.approveDeenAr === true) {
-    const message = {
-        notification: {
-            title: 'Approval Notification',
-            body: 'Your reservation has been approved.'
-        },
-        token: existingVehicle.driverEmail // Replace with appropriate token for driver's device
-    };
-
-    await admin.messaging().send(message);
-    console.log('Notification sent successfully');
-}
+ 
 
       setFormData({
         name: "",
