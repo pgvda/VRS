@@ -35,8 +35,21 @@ export default function FeedbackPage() {
         });
         if (Object.keys(validationErrors).length > 0) {
             setErrors(validationErrors);
+            alert("Feedback not Submited, Fill all the details and try again")
             return;
         }
+
+            // Assuming the URL is stored in a variable called 'urlString'
+    const urlString = window.location.href;
+
+    // Step 1: Parse the URL
+    const url = new URL(urlString);
+    const params = new URLSearchParams(url.search);
+
+    // Step 2: Access the restaurantID parameter
+    const selectedVehicleNo = params.get("vehicle");
+
+    console.log("Restaurant ID:", selectedVehicleNo);
 
         try {
             const response = await fetch("http://localhost:8080/user/feedback/feedback-submit", {
@@ -51,15 +64,18 @@ export default function FeedbackPage() {
                     comfortOfTheRide: formData.comfortOfTheRide,
                     overallSatisfaction: formData.overallSatisfaction,
                     otherFeedback: formData.otherFeedback,
-                    SuggestionsForImprovement: formData.SuggestionsForImprovement
-                }),vehicleNo
+                    SuggestionsForImprovement: formData.SuggestionsForImprovement,
+                    vehicleNo : selectedVehicleNo
+                })
             });
             
             const data = await response.json();
             console.log(data);
+            alert("Feedback Submited")
             // Optionally, show success message or redirect user
         } catch (error) {
             console.error("Error submitting feedback:", error);
+            alert("Something went wrong")
             // Optionally, show error message to the user
         }
     };
@@ -130,6 +146,6 @@ export default function FeedbackPage() {
                 </form>
                 
             </div>
-        </div>
-    )
+        </div>
+    )
 }
