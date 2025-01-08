@@ -63,25 +63,25 @@ router.post("/addrequest", async (req, res) => {
         const firestoreDocRef = requestCollection.doc(firestoreDocId);
 
         // Save request data to Firestore
-        await firestoreDocRef.set({
-            id: firestoreDocId,
-            date,
-            startTime,
-            endTime,
-            reason,
-            section,
-            vehicle,
-            departureLocation,
-            destination,
-            comeBack,
-            distance,
-            passengers,
-            approveHead: false,
-            approveDeenAr: false,
-            applier,
-            applyDate,
-            driverStatus: "notStart"
-        });
+        // await firestoreDocRef.set({
+        //     id: firestoreDocId,
+        //     date,
+        //     startTime,
+        //     endTime,
+        //     reason,
+        //     section,
+        //     vehicle,
+        //     departureLocation,
+        //     destination,
+        //     comeBack,
+        //     distance,
+        //     passengers,
+        //     approveHead: false,
+        //     approveDeenAr: false,
+        //     applier,
+        //     applyDate,
+        //     driverStatus: "notStart"
+        // });
 
        
 
@@ -165,22 +165,22 @@ router.put("/updateRequest1/:id", async (req, res) => {
                 topic: 'drivers', // The topic to which drivers are subscribed
             };
 
-            const response = await admin.messaging().send(message);
+         //   const response = await admin.messaging().send(message);
 
         // Handle response if needed
-            console.log('FCM notification sent:', response);
+            //console.log('FCM notification sent:', response);
 
-            console.log(`Notification sent to driver (${vehicle.driverName})`);
+           // console.log(`Notification sent to driver (${vehicle.driverName})`);
        
 
         // Update Firestore (if needed)
-        const requestDocRef = requestCollection.doc(requestId);
-        await requestDocRef.set(requestData, { merge: true });
+      //  const requestDocRef = requestCollection.doc(requestId);
+       // await requestDocRef.set(requestData, { merge: true });
 
-        console.log(`Request data updated in Firestore for ID ${requestId}`);
+       // console.log(`Request data updated in Firestore for ID ${requestId}`);
 
         // Respond with success message and updated request object
-        res.json({ status: "ok", updatedRequest: existingRequest });
+       // res.json({ status: "ok", updatedRequest: existingRequest });
     } catch (error) {
         console.error("Error occurred: ", error);
         res.status(500).json({ error: "Internal Server Error" });

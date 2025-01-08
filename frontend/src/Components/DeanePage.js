@@ -262,7 +262,7 @@ export default function ArPage() {
                   onChange={handleApproveChange}
                 />
                 <label className="set-approve-label" htmlFor="setApprove2">
-                  Rejected &ensp; by Ar
+                  Rejected &ensp; by Dean
                 </label>
               </div>
               <button type="submit" className="btn btn-primary submitf" onClick={submitArForm}>Proceed</button>
