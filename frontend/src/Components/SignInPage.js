@@ -6,6 +6,7 @@ import Cookies from 'js-cookie';
 import axios from 'axios';
 import PopUp from './Popup';
 import Navbar from './NavBar';
+import Api from '../utils/API';
 
 export default function Signin() {
 
@@ -31,12 +32,14 @@ export default function Signin() {
           "content-type":"application/json",//not must
         },
       };
-      const{data}=await axios.post('http://localhost:8080/user/login',
+      const{data}=await axios.post(Api +'user/login',
     {
       email,password,
     },config
     );
-    
+    console.log('data',data.token)
+    localStorage.setItem('token', data.token);
+
     Cookies.set('userInfo', JSON.stringify(data), { expires: 7 });
     if (data.designation=="user") {
       navigate('/user'); // Redirect to the admin page
@@ -67,7 +70,7 @@ console.log(parsedUserInfo);
 
   return (
     <div className='sign'>
-      <Navbar></Navbar>
+      
       
       
     <div >

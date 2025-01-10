@@ -2,29 +2,31 @@ const express =require("express");
 const mongoose=require("mongoose");
 const bodyParser=require("body-parser");
 const cors= require("cors");
-const dotenv=require("dotenv")
+const dotenv=require("dotenv");
+const helmet = require('helmet');
 const app=express();
+const mongoSanitize = require('express-mongo-sanitize');
 require("dotenv").config();
 
 const http = require('http');
 const websocket = require('./webShocket.js');
 
 
-
+const corsOption = {
+    origin:'http://localhost:3000',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: ['Content-Type', 'Authorization']
+}
 
 const server = http.createServer(app);
-
-
 
 
 const PORT1=process.env.PORT ||8080;
 
 
-
-  
-
-app.use(cors());
+app.use(cors(corsOption));
 app.use(bodyParser.json());
+app.use(mongoSanitize());
 
 const URL=process.env.MONGODB_URL;
 
@@ -84,6 +86,8 @@ const locationDetail = require("./routes/LocationTrackers.js")
 const availableSeats = require("./routes/availableSheats.js")
 const cost = require('./routes/CostCalculations');
 const feedbackRouter = require("./routes/Feedbacks.js");
+
+app.use(helmet());
 
 app.use("/availableSeats",availableSeats)
 app.use("/request",requestRouter);

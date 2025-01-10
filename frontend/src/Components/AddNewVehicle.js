@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../Css/AddNewVehicle.css";
+import Api from "../utils/API";
 
 export default function AddNewVehicle() {
     const [vehicleNo, setVehicleNo] = useState("");
@@ -38,7 +39,7 @@ export default function AddNewVehicle() {
             vehicleName
         }
 
-        axios.post("http://localhost:8080/vehicle/addVehicle", addNewVehicle)
+        axios.post(Api + "vehicle/addVehicle", addNewVehicle)
             .then(() => {
                 setMessage("New vehicle added successfully");
                 setVehicleNo("");

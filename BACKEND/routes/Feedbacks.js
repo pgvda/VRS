@@ -3,6 +3,7 @@ const express=require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const QRCode = require('qrcode');
+const jwtAuth = require('../middleware/authMiddleware');
 
 const FeedBack = require("../model/Feedback");
 

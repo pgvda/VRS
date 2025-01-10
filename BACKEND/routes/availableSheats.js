@@ -2,11 +2,12 @@
 const express = require('express');
 const Request = require('../model/Request.js');
 const Vehicle = require('../model/Vehicle.js');
+const jwtAuth = require('../middleware/authMiddleware');
 
 // Create an Express router
 const router = express.Router();
 
-router.get('/getAvailableSeats', async (req, res) => {
+router.get('/getAvailableSeats',jwtAuth, async (req, res) => {
     try {
         const { date, vehicle } = req.query;
 

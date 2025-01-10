@@ -20,8 +20,11 @@ const AddUserForm = ({ onClose }) => {
   };
 
   const handleSubmit = async e => {
+    
     e.preventDefault();
     try {
+      alert('run');
+      console.log('form',formData)
       await axios.post('http://localhost:8080/user/signup', formData);
       onClose();
       

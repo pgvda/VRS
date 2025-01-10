@@ -24,6 +24,7 @@ function Navbar() {
   const handleLogout = () => {
     // Clear user info from cookies
     Cookies.remove('userInfo');
+    localStorage.removeItem('token');
 
     // Update state
     setUserEmail(null);

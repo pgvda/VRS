@@ -27,16 +27,32 @@ import AddCostDetails from './Components/CostDetails/AddCostDetails';
 import CostList from './Components/CostDetails/CostList';
 import { AuthProvider } from './context/AuthContext';
 import FeedbackPage from './Components/FeedbackPage';
+import ProtectedRoute from './utils/ProtectedRoute';
 
 const AppContent = () => {
-  const location = useLocation();
-  const showNavBar = location.pathname !== '/';
+  // const location = useLocation();
+  // const showNavBar = location.pathname === '/';
 
   return (
     <>
-      {showNavBar && <NavBar />}
-      <Routes>
+      
+
+    </>
+  );
+};
+
+function App() {
+  return (
+    
+      <Router>
+        <NavBar/>
+              <Routes>
         <Route path="/" exact Component={Signin} />
+        <Route path="/addUser" element={<AddUserForm />} />
+        <Route path="/userlist" element={<UserList />} />
+        
+        <Route path='/user/feedback' element ={<FeedbackPage/>}/>
+        <Route element={<ProtectedRoute/>}>
         <Route path="/user" element={<HistryPage />} />
         <Route path="/dean" element={<Dean />} />
         <Route path="/ar" element={<ArPage />} />
@@ -47,27 +63,18 @@ const AppContent = () => {
         <Route path="/vehiclelist" element={<VehicleList />} />
         <Route path="/location-tracker" element={<LocationTracker />} />
         <Route path="/security" element={<SecurityPage />} />
-        <Route path="/userlist" element={<UserList />} />
-        <Route path="/addUser" element={<AddUserForm />} />
+       
+        
         <Route path="/userlistar" element={<UserListAr />} />
         <Route path="/costpage" element={<CostPage />} />
         <Route path="/addcostpage" element={<AddCostDetails />} />
         <Route path="/costlist" element={<CostList />} />
-        <Route path='/user/feedback' element ={<FeedbackPage/>}/>
+        </Route>
        
       </Routes>
       <Footer />
-    </>
-  );
-};
-
-function App() {
-  return (
-    <AuthProvider>
-      <Router>
-        <AppContent />
       </Router>
-    </AuthProvider>
+    
   );
 }
 
