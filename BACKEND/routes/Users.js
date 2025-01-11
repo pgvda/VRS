@@ -9,6 +9,7 @@ const User = require("../model/User");
 
 // user signup 
 
+
 router.post('/signup',async(req,res)=>{
     try{
         const fristName = req.body.fristName;

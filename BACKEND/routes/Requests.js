@@ -59,29 +59,29 @@ router.post("/addrequest", async (req, res) => {
         const savedRequest = await newRequest.save();
 
         // Use the MongoDB ID as the Firestore document ID
-        const firestoreDocId = savedRequest._id.toString();
-        const firestoreDocRef = requestCollection.doc(firestoreDocId);
+       // const firestoreDocId = savedRequest._id.toString();
+       // const firestoreDocRef = requestCollection.doc(firestoreDocId);
 
         // Save request data to Firestore
-        await firestoreDocRef.set({
-            id: firestoreDocId,
-            date,
-            startTime,
-            endTime,
-            reason,
-            section,
-            vehicle,
-            departureLocation,
-            destination,
-            comeBack,
-            distance,
-            passengers,
-            approveHead: false,
-            approveDeenAr: false,
-            applier,
-            applyDate,
-            driverStatus: "notStart"
-        });
+        // await firestoreDocRef.set({
+        //     id: firestoreDocId,
+        //     date,
+        //     startTime,
+        //     endTime,
+        //     reason,
+        //     section,
+        //     vehicle,
+        //     departureLocation,
+        //     destination,
+        //     comeBack,
+        //     distance,
+        //     passengers,
+        //     approveHead: false,
+        //     approveDeenAr: false,
+        //     applier,
+        //     applyDate,
+        //     driverStatus: "notStart"
+        // });
 
        
 

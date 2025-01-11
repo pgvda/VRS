@@ -27,6 +27,7 @@ import AddCostDetails from './Components/CostDetails/AddCostDetails';
 import CostList from './Components/CostDetails/CostList';
 import { AuthProvider } from './context/AuthContext';
 import FeedbackPage from './Components/FeedbackPage';
+import FeedBackReview from './Components/FeedBackReview';
 
 const AppContent = () => {
   const location = useLocation();
@@ -54,6 +55,7 @@ const AppContent = () => {
         <Route path="/addcostpage" element={<AddCostDetails />} />
         <Route path="/costlist" element={<CostList />} />
         <Route path='/user/feedback' element ={<FeedbackPage/>}/>
+        <Route path='/user/feedback/review' element ={<FeedBackReview/>}/>
        
       </Routes>
       <Footer />
